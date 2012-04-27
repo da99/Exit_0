@@ -1,3 +1,3 @@
 class Exit_0
-  VERSION = "0.0.1"
+  VERSION = "1.2.0"
 end

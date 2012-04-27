@@ -1,13 +1,10 @@
 
-bins = Dir.glob("bin/*")
+describe "permissions of bin/" do
+  
+  it "should be 750" do
+    `stat -c %a bin`.strip
+    .should.be == "750"
+  end
+  
+end # === permissions of bin/
 
-unless bins.empty?
-  describe "permissions of bin/" do
-    bins.each { |file|
-      it "should chmod 755 for: #{file}" do
-        `stat -c %a #{file}`.strip
-        .should.be == "755"
-      end
-    }
-  end # === permissions of bin/
-end # === unless bins.empty?
