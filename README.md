@@ -9,7 +9,8 @@ Don't like Exit\_0? Try:
 * [posix-spawn](https://github.com/rtomayko/posix-spawn).
 That is the easiest way to handle child processes 
 (aka shelling out). 
-* [POpen4](https://github.com/shairontoledo/popen4) Don't confuse it with regular popen4.
+* [open4](https://github.com/ahoward/open4)
+* [POpen4](https://github.com/shairontoledo/popen4)
 * [Here are other alternatives](http://stackoverflow.com/questions/6338908/ruby-difference-between-exec-system-and-x-or-backticks).
 
 Windows
