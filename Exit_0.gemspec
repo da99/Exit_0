@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Make sure your last child process exited with 0.}
   s.description = %q{
     A simple method that runs a child process and raises
-    Exit_Zero::Non_Zero if $?.exitstatus is not zero.
+    Exit_0::Non_0 if $?.exitstatus is not zero.
   }
 
   s.files         = `git ls-files`.split("\n")
