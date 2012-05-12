@@ -2,18 +2,6 @@ require 'Exit_0/version'
 require 'Split_Lines'
 require 'posix/spawn'
 
-module Kernel
-
-  private
-
-  def exit_0 cmd
-    new = Split_Lines(cmd).join(' && ')
-    o = `#{new} 2>&1`.strip
-    raise Exit_0::Non_0, "#{$?.exitstatus} => #{o}" unless $?.exitstatus == 0
-    o
-  end
-
-end # === Kernel
 
 def Exit_0 *cmd, &blok
   
@@ -100,4 +88,18 @@ class Exit_0
     include Base
   end # === Child
   
+  module Top_Methods
+
+    def exit_0 cmd
+      new = Split_Lines(cmd).join(' && ')
+      o = `#{new} 2>&1`.strip
+      raise Exit_0::Non_0, "#{$?.exitstatus} => #{o}" unless $?.exitstatus == 0
+      o
+    end
+
+  end # === module Base
+
 end # === class Exit_0
+
+
+include Exit_0::Top_Methods

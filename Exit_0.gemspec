@@ -5,7 +5,7 @@ require "Exit_0/version"
 
 Gem::Specification.new do |s|
   s.name        = "Exit_0"
-  s.version     = Exit_0::VERSION
+  s.version     = Exit_0_Version
   s.authors     = ["da99"]
   s.email       = ["i-hate-spam-45671204@mailinator.com"]
   s.homepage    = "https://github.com/da99/Exit_0"
