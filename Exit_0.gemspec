@@ -21,13 +21,12 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_development_dependency 'bacon'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'Bacon_Colored'
-  s.add_development_dependency 'pry'
-  
+  s.add_development_dependency 'bacon'         , '>= 1.2.0'
+  s.add_development_dependency 'Bacon_Colored' , '> 0.1.2'
+  s.add_development_dependency 'pry'           , '> 0.10.0'
+
   # Specify any dependencies here; for example:
-  s.add_runtime_dependency 'posix-spawn'
-  s.add_runtime_dependency 'Split_Lines'
-  s.add_runtime_dependency 'open4'
+  s.add_runtime_dependency 'posix-spawn', '> 0.3.8'
+  s.add_runtime_dependency 'Split_Lines', '> 0.9.9'
+  s.add_runtime_dependency 'open4',       '> 1.3.0'
 end
