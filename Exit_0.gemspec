@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 
-$:.push File.expand_path("../lib", __FILE__)
-require "Exit_0/version"
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = "Exit_0"
-  s.version     = Exit_0_Version
+  s.version     = `cat VERSION`
   s.authors     = ["da99"]
-  s.email       = ["i-hate-spam-45671204@mailinator.com"]
+  s.email         = ["i-hate-spam-1234567@mailinator.com"]
   s.homepage    = "https://github.com/da99/Exit_0"
   s.summary     = %q{Make sure your last child process exited with 0.}
   s.description = %q{
@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
     Exit_0::Non_0 if $?.exitstatus is not zero.
   }
 
+  s.license       = "MIT"
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
