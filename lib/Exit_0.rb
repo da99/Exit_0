@@ -1,4 +1,3 @@
-require 'Exit_0/version'
 require 'Split_Lines'
 require 'posix/spawn'
 

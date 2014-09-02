@@ -29,3 +29,34 @@ describe "Child delegate methods" do
   
 end # === Child delegate methods
 
+describe "Exit_0::Child" do
+
+    # ---- :out
+  
+    it "returns stripped :out" do
+      Exit_0::Child.new("pwd").out
+      .should == `pwd`.strip
+    end
+
+    it "returns raw output for :raw_out" do
+      Exit_0::Child.new("pwd").raw_out
+      .should == `pwd`
+    end
+    
+    # ---- :err 
+    
+    it "returns stripped :err" do
+      Exit_0::Child.new("pwdssssss").err
+      .should == `bash -lc "pwdssssss" 2>&1`.strip
+    end
+
+    it "returns raw output for :raw_out" do
+      Exit_0::Child.new("no_exist").err
+      .should.match %r!no_exist: command not found!
+    end
+  
+end # === Exit_0::Child
+
+
+
+

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# -*- bash -*-
+#
+#
+set -u -e -o pipefail
+
+
+
+bundle exec bacon spec/lib/helper.rb spec/*.rb
